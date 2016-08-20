@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+        <string-array name="spinnerItems">
+            <item>improtant</item>
+            <item>medium</item>
+            <item>not improtant</item>
+
+        </string-array>
+
+
+
+
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="Task_name">Task name</string>
+    <string name="Due_date">When is it due ? </string>
+    <string name="Description">Description</string>
+    <string name="Impritance"> How important is it ? </string>
+    <string name="Save"> Save </string>
+    <string name="Cancel">Cancel </string>
+    <string name="title_activity_list">List</string>
+
+
+</resources>
