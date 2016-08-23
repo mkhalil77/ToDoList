@@ -18,7 +18,7 @@ public class Database extends SQLiteOpenHelper {
     public static final String COLUMN_NAME_TaskName = "TaskName";
     public static final String COLUMN_NAME_Description = "Description";
     public static final String COLUMN_NAME_Date = "Date";
-    public static final String COLUMN_NAME_Improtance = "Description";
+    public static final String COLUMN_NAME_Improtance = "Improtance";
 
 
     //Create DB SQL
