@@ -1,4 +1,5 @@
-import android.content.ContentValues;
+package com.example.mk.todolist;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -25,10 +26,10 @@ public class Database extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + Database.TABLE_NAME + " (" +
                     Database.COLUMN_NAME_ENTRY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT ," +
-                    Database.COLUMN_NAME_TaskName + "TEXT" + "," +
-                    Database.COLUMN_NAME_Description + "TEXT" + "," +
-                    Database.COLUMN_NAME_Date + "TEXT" + "," +
-                    Database.COLUMN_NAME_Improtance + "TEXT" +
+                    Database.COLUMN_NAME_TaskName + " TEXT" + "," +
+                    Database.COLUMN_NAME_Description + " TEXT" + "," +
+                    Database.COLUMN_NAME_Date + " TEXT" + "," +
+                    Database.COLUMN_NAME_Improtance + " TEXT" +
                     " );";
 
 
@@ -38,28 +39,13 @@ public class Database extends SQLiteOpenHelper {
 
         /* TODO : Impelment  methode and modify */
 
-    private void AddElementToTable(String TaskName, String Description, String Date, String Importance) {
 
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-
-        values.put(this.COLUMN_NAME_TaskName, TaskName);
-        values.put(this.COLUMN_NAME_Description, Description);
-        values.put(this.COLUMN_NAME_Date, Date);
-        values.put(this.COLUMN_NAME_Improtance, Importance);
-
-        long newRowId;
-
-        newRowId = db.insert(this.TABLE_NAME, null, values);
-
-    }
 
     private void DeleteElementsFromTable(String TaskNAme) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.execSQL("delete from " + this.TABLE_NAME + " where " + COLUMN_NAME_TaskName + "='" + TaskNAme + "'");
+        db.execSQL("delete from " + TABLE_NAME + " where " + COLUMN_NAME_TaskName + "='" + TaskNAme + "'");
 
 
     }
