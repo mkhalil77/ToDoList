@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //save buttoa ction
+        //save button ction
 
         SaveButton.setOnClickListener(new View.OnClickListener() {
             @Override

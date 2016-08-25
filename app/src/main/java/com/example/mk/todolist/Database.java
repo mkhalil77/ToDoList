@@ -1,8 +1,10 @@
 package com.example.mk.todolist;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by Mk on 8/16/2016.
@@ -46,6 +48,20 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.execSQL("delete from " + TABLE_NAME + " where " + COLUMN_NAME_TaskName + "='" + TaskNAme + "'");
+
+
+    }
+
+    public void ReadAllDB() {
+        String[] allColumns = {COLUMN_NAME_ENTRY_ID, COLUMN_NAME_TaskName, COLUMN_NAME_Description, COLUMN_NAME_Date, COLUMN_NAME_Improtance};
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(Database.TABLE_NAME, allColumns, null, null, null, null, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            long taskNames = cursor.getColumnIndexOrThrow(COLUMN_NAME_TaskName);
+            String s = Long.toString(taskNames);
+            Log.d("tagtag", s);
+        }
 
 
     }
