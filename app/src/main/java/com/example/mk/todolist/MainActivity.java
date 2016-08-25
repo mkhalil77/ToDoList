@@ -96,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                 newRowId = db.insert(Database.TABLE_NAME, null, values);
 
 
+                localdata.ReadAllDB();
+
+
             }
         });
 
