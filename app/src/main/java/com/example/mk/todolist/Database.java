@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import java.util.ArrayList;
 
 /**
  * Created by Mk on 8/16/2016.
@@ -29,7 +32,8 @@ public class Database extends SQLiteOpenHelper {
 
 
     //Create DB SQL
-    public Task[] tasklist = new Task[1000];
+    public ArrayList<Task> tasklist = new ArrayList<Task>();
+
 
 
     public Database(Context context) {
@@ -49,7 +53,7 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    public Task[] ReadAllDB() {
+    public void ReadAllDB() {
         int i = 0;
         Task temp = new Task();
 
@@ -66,12 +70,15 @@ public class Database extends SQLiteOpenHelper {
 
             cursor.moveToNext();
 
-            tasklist[i++] = temp;
+            tasklist.add(temp);
+            i++;
+            int j = i - 1;
+            Log.d("TAG 2", tasklist.get(j).toString());
 
 
         }
 
-        return tasklist;
+
     }
 
     @Override

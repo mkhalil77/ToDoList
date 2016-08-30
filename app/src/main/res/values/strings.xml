@@ -7,6 +7,7 @@
     <string name="Save"> Save </string>
     <string name="Cancel">Cancel </string>
     <string name="title_activity_list">List</string>
+    <string name="Diasplay">Display</string>
 
 
 </resources>

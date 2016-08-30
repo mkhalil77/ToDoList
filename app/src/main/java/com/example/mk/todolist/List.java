@@ -2,6 +2,7 @@ package com.example.mk.todolist;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -16,13 +17,16 @@ public class List extends Activity {
 
         ListView Biglist = (ListView) findViewById(R.id.listView);
         Database localdata = new Database(getApplicationContext());
-        Task[] items = localdata.ReadAllDB();
+        localdata.tasklist.clear();
+        localdata.ReadAllDB();
+
 
         final ArrayList<String> list = new ArrayList<String>();
 
 
-        for (int i = 0; i < items.length; ++i) {
-            list.add(items[i].toString());
+        for (int i = 0; i < localdata.tasklist.size(); i++) {
+            list.add(localdata.tasklist.get(i).toString());
+            Log.d("TAG 7", localdata.tasklist.get(i).toString());
 
         }
 

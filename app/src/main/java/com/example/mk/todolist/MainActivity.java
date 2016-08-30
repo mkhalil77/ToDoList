@@ -2,6 +2,7 @@ package com.example.mk.todolist;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         final Spinner importance = (Spinner) findViewById(R.id.spinner);
         final Button SaveButton = (Button) findViewById(R.id.save);
         final Button CancelButton = (Button) findViewById(R.id.cancel);
+        final Button DsiplayButton = (Button) findViewById(R.id.Display);
+
 
 
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -70,6 +73,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Display Button
+        DsiplayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, List.class);
+
+
+                startActivity(intent);
+            }
+        });
 
         //save button ction
 
