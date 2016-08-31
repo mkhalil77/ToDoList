@@ -26,7 +26,7 @@ public class List extends Activity {
 
         for (int i = 0; i < localdata.tasklist.size(); i++) {
             list.add(localdata.tasklist.get(i).toString());
-            Log.d("TAG 7", localdata.tasklist.get(i).toString());
+            Log.d("TAG 7", i + " " + "  " + localdata.tasklist.get(i).toString());
 
         }
 

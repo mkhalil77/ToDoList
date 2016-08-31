@@ -62,6 +62,8 @@ public class Database extends SQLiteOpenHelper {
         Cursor cursor = db.query(Database.TABLE_NAME, allColumns, null, null, null, null, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
+            temp = new Task();
+
             temp.setId(cursor.getString(cursor.getColumnIndex(COLUMN_NAME_ENTRY_ID)));
             temp.setTaskName(cursor.getString(cursor.getColumnIndex(COLUMN_NAME_TaskName)));
             temp.setDate(cursor.getString(cursor.getColumnIndex(COLUMN_NAME_Date)));
@@ -73,11 +75,12 @@ public class Database extends SQLiteOpenHelper {
             tasklist.add(temp);
             i++;
             int j = i - 1;
-            Log.d("TAG 2", tasklist.get(j).toString());
+            Log.d("TAG 2", j + " " + tasklist.get(j).toString());
 
 
         }
-
+        for (int k = 0; k < tasklist.size(); k++)
+            Log.d("Tag4 ", tasklist.get(k).toString());
 
     }
 
